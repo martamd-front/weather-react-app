@@ -1,4 +1,4 @@
-.Search .search-box {
+.Weather .search-box {
   border-radius: 40px;
   padding: 10px 12px 10px 20px;
   margin-bottom: 20px;
@@ -39,4 +39,16 @@
     opacity: 0.8;
     background: #d485ff;
   }
+}
+
+.Loading {
+  position: relative;
+  flex-flow: column wrap;
+  overflow: auto;
+  padding: 30px 20px;
+  display: flex;
+  -webkit-box-pack: center;
+  place-content: center;
+  place-items: center;
+  -webkit-box-align: center;
 }

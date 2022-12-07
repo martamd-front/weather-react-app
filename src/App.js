@@ -1,6 +1,5 @@
 import "./App.scss";
-import Search from "./components/Search";
-import FiveDays from "./components/FiveDays";
+import Weather from "./components/Weather";
 import Footer from "./components/Footer";
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
       <div className="container">
         <div className="d-flex align-items-center justify-content-center vertical-align-vh">
           <main className="box-app">
-            <Search defaultCity="Barcelona" />
-            <FiveDays />
+            <Weather defaultCity="Barcelona" />
             <Footer />
           </main>
         </div>

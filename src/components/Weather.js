@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Search.scss";
+import "./Weather.scss";
 import SearchIcon from "../images/search.svg";
 import InfoWeather from "./InfoWeather";
+import FiveDays from "./FiveDays";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
-const Search = ({ defaultCity }) => {
+const Weather = ({ defaultCity }) => {
   const [city, setCity] = useState(defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
@@ -54,7 +56,7 @@ const Search = ({ defaultCity }) => {
 
   if (weatherData.ready) {
     return (
-      <div className="Search">
+      <div className="Weather">
         {form}
         <InfoWeather
           city={weatherData.city}
@@ -65,12 +67,17 @@ const Search = ({ defaultCity }) => {
           wind={Math.round(weatherData.wind)}
           icon={weatherData.icon}
         />
+        <FiveDays />
       </div>
     );
   } else {
     search();
-    return "Loading...";
+    return (
+      <div className="Loading">
+        <PropagateLoader color="#d485ff" />
+      </div>
+    );
   }
 };
 
-export default Search;
+export default Weather;
