@@ -1,0 +1,28 @@
+/* BOX */
+.vertical-align-vh {
+  height: 100vh;
+}
+
+@media (max-height: 650px) {
+  .vertical-align-vh {
+    height: auto;
+    margin: 25px 5px;
+  }
+}
+
+.box-app {
+  border-radius: 10px;
+  padding: 30px 30px 50px;
+  width: 600px;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  border-radius: 30px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin: 0 auto;
+}
+
+@media (max-width: 650px) {
+  .box-app {
+    padding: 30px 20px;
+  }
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Search from "./components/Search";
+import InfoWeather from "./components/InfoWeather";
+import FiveDays from "./components/FiveDays";
+import Footer from "./components/Footer";
 
 function App() {
+  let city = "Barcelona";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="d-flex align-items-center justify-content-center vertical-align-vh">
+          <main className="box-app">
+            <Search />
+            <InfoWeather city={city} />
+            <FiveDays />
+            <Footer />
+          </main>
+        </div>
+      </div>
     </div>
   );
 }
