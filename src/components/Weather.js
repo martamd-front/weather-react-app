@@ -46,6 +46,7 @@ const Weather = ({ defaultCity }) => {
           id="city-input"
           placeholder="Enter a city..."
           onChange={changeCity}
+          autoComplete="off"
         />
         <button type="submit" className="btn btn-primary btn-search">
           <img src={SearchIcon} alt="Search icon" />
