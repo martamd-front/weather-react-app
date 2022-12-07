@@ -3,7 +3,6 @@ import Weather from "./components/Weather";
 import Footer from "./components/Footer";
 
 function App() {
-  let city = "Barcelona";
   return (
     <div className="App">
       <div className="container">
