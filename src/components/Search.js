@@ -4,32 +4,36 @@ import "./Search.scss";
 import SearchIcon from "../images/search.svg";
 import InfoWeather from "./InfoWeather";
 
-const Search = () => {
-  const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [cityWeather, setCityWeather] = useState({});
+const Search = ({ defaultCity }) => {
+  const [city, setCity] = useState(defaultCity);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   const showWeather = (response) => {
-    setLoaded(true);
-    setCityWeather({
+    setWeatherData({
+      ready: true,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
+      date: "Friday 14:12",
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+      city: response.data.city,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const apiKey = "d0b6fd5o79fcec65aa41f33c5203dt9a";
-    let unit = "metric";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
-    axios.get(apiUrl).then(showWeather);
+    search();
   };
 
   const changeCity = (event) => {
     setCity(event.target.value);
+  };
+  const search = () => {
+    const apiKey = "d0b6fd5o79fcec65aa41f33c5203dt9a";
+    let unit = "metric";
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(showWeather);
   };
 
   const form = (
@@ -39,7 +43,6 @@ const Search = () => {
           type="text"
           id="city-input"
           placeholder="Enter a city..."
-          autocomplete="off"
           onChange={changeCity}
         />
         <button type="submit" className="btn btn-primary btn-search">
@@ -49,22 +52,24 @@ const Search = () => {
     </form>
   );
 
-  if (loaded) {
+  if (weatherData.ready) {
     return (
       <div className="Search">
         {form}
         <InfoWeather
-          city={city}
-          temperature={Math.round(cityWeather.temperature)}
-          description={cityWeather.description}
-          humidity={cityWeather.humidity}
-          wind={Math.round(cityWeather.wind)}
-          icon={cityWeather.icon}
+          city={weatherData.city}
+          date={weatherData.date}
+          temperature={Math.round(weatherData.temperature)}
+          description={weatherData.description}
+          humidity={weatherData.humidity}
+          wind={Math.round(weatherData.wind)}
+          icon={weatherData.icon}
         />
       </div>
     );
   } else {
-    return form;
+    search();
+    return "Loading...";
   }
 };
 

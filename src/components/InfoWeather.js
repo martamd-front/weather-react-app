@@ -2,18 +2,18 @@ import React from "react";
 import "./InfoWeather.scss";
 export default function InfoWeather({
   city,
+  date,
   temperature,
   description,
   humidity,
   wind,
   icon,
 }) {
-  let todayHour = "Friday 14:12";
   return (
     <section className="InfoWeather">
       <div className="ActualInfoCity">
-        <h2>{city}</h2>
-        <p className="today-hour">{todayHour}</p>
+        <h2 className="text-capitalize">{city}</h2>
+        <p className="today-hour">{date}</p>
         <p className="description">{description}</p>
         <ul className="actual-more-info">
           <li>

@@ -10,7 +10,7 @@ function App() {
       <div className="container">
         <div className="d-flex align-items-center justify-content-center vertical-align-vh">
           <main className="box-app">
-            <Search />
+            <Search defaultCity="Barcelona" />
             <FiveDays />
             <Footer />
           </main>
