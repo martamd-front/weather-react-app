@@ -5,9 +5,11 @@ import SearchIcon from "../images/search.svg";
 import InfoWeather from "./InfoWeather";
 import FiveDays from "./FiveDays";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import formattedDate from "./FormattedDate";
 
 const Weather = ({ defaultCity }) => {
   const [city, setCity] = useState(defaultCity);
+  const [date, setDate] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   const showWeather = (response) => {
@@ -17,25 +19,36 @@ const Weather = ({ defaultCity }) => {
       description: response.data.condition.description,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
-      date: "Friday 14:12",
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
       city: response.data.city,
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    search();
-  };
-
-  const changeCity = (event) => {
-    setCity(event.target.value);
-  };
   const search = () => {
     const apiKey = "d0b6fd5o79fcec65aa41f33c5203dt9a";
     let unit = "metric";
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showWeather);
+  };
+
+  function getTimeCity(response) {
+    setDate(formattedDate(response.data.datetime));
+  }
+
+  const timeCity = () => {
+    let apiKey = "a5982d63d74e479c94f562be7bc61e04&location";
+    let apiTimeUrl = `https://timezone.abstractapi.com/v1/current_time/?api_key=${apiKey}&location=${city}`;
+    axios.get(apiTimeUrl).then(getTimeCity);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    search();
+    timeCity(city);
+  };
+
+  const changeCity = (event) => {
+    setCity(event.target.value);
   };
 
   const form = (
@@ -60,8 +73,8 @@ const Weather = ({ defaultCity }) => {
       <div className="Weather">
         {form}
         <InfoWeather
+          date={date}
           city={weatherData.city}
-          date={weatherData.date}
           temperature={Math.round(weatherData.temperature)}
           description={weatherData.description}
           humidity={weatherData.humidity}
@@ -73,6 +86,7 @@ const Weather = ({ defaultCity }) => {
     );
   } else {
     search();
+    timeCity();
     return (
       <div className="Loading">
         <PropagateLoader color="#d485ff" />
