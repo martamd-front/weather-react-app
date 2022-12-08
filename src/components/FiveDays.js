@@ -8,7 +8,7 @@ export default function FiveDays() {
           <h4>Wed</h4>
           <div className="weather-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              src="https://weather-react-martamd.netlify.app/static/media/overcast.244705a08a34c685e32fe335ad8ef6e2.svg"
               alt="few clouds"
             />
           </div>
@@ -21,7 +21,7 @@ export default function FiveDays() {
           <h4>Thu</h4>
           <div className="weather-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              src="https://weather-react-martamd.netlify.app/static/media/partly-cloudy-day.0e7cd9f91f17f62b4d487f0683fd052b.svg"
               alt="light rain"
             />
           </div>
@@ -34,7 +34,7 @@ export default function FiveDays() {
           <h4>Fri</h4>
           <div className="weather-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+              src="https://weather-react-martamd.netlify.app/static/media/overcast.244705a08a34c685e32fe335ad8ef6e2.svg"
               alt="scattered clouds"
             />
           </div>
@@ -47,7 +47,7 @@ export default function FiveDays() {
           <h4>Sat</h4>
           <div className="weather-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              src="https://weather-react-martamd.netlify.app/static/media/clear-day.4c82810e685aca17144a40289b509a6c.svg"
               alt="light rain"
             />
           </div>
@@ -60,7 +60,7 @@ export default function FiveDays() {
           <h4>Sun</h4>
           <div className="weather-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+              src="https://weather-react-martamd.netlify.app/static/media/partly-cloudy-day.0e7cd9f91f17f62b4d487f0683fd052b.svg"
               alt="overcast clouds"
             />
           </div>
