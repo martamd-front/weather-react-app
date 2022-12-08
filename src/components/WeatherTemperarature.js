@@ -19,7 +19,7 @@ export default function WeatherTemperature({ celcius }) {
         <span>{celcius}</span>
         <span className="units">
           °C |{" "}
-          <a href="#" onClick={showFahrenheit}>
+          <a href="/" onClick={showFahrenheit}>
             °F
           </a>
         </span>
@@ -31,7 +31,7 @@ export default function WeatherTemperature({ celcius }) {
       <h3 className="WeatherTemperarature">
         <span>{Math.round(fahrenheit)}</span>
         <span className="units">
-          <a href="#" onClick={showCelcius}>
+          <a href="/" onClick={showCelcius}>
             °C
           </a>{" "}
           | °F
