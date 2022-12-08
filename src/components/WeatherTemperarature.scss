@@ -1,0 +1,25 @@
+.WeatherTemperarature {
+  font-size: 50px;
+  margin-bottom: 0;
+  .units {
+    font-size: 18px;
+    margin-bottom: 0;
+    position: relative;
+    top: -25px;
+    padding-left: 5px;
+    a {
+      color: #d485ff;
+      text-decoration: none;
+    }
+    a:hover {
+      opacity: 0.8;
+      color: #d485ff;
+    }
+    a.active,
+    a.active:hover {
+      color: white;
+      cursor: default;
+      opacity: 1;
+    }
+  }
+}

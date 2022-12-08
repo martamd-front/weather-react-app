@@ -1,6 +1,7 @@
 import React from "react";
 import "./InfoWeather.scss";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperarature from "./WeatherTemperarature";
 export default function InfoWeather({
   city,
   date,
@@ -26,10 +27,7 @@ export default function InfoWeather({
         </ul>
       </div>
       <div className="NowWeather">
-        <h3 className="temperature">
-          <span>{temperature}</span>
-          <span className="units">°C</span>
-        </h3>
+        <WeatherTemperarature celcius={temperature} />
         <div className="weather-icon">
           <WeatherIcon code={icon} alt={description} />
         </div>
