@@ -8,7 +8,7 @@ function App() {
       <div className="container">
         <div className="d-flex align-items-center justify-content-center vertical-align-vh">
           <main className="box-app">
-            <Weather defaultCity="Madrid" />
+            <Weather defaultCity="Barcelona" />
             <Footer />
           </main>
         </div>
