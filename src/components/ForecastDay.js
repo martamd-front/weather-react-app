@@ -19,15 +19,13 @@ export default function ForecastDay({ forecastDay }) {
           alt={forecastDay.condition.description}
         />
       </div>
-      <p>
+      <p className="temperature">
         <strong className="forecast-temp">
-          {Math.round(forecastDay.temperature.maximum)}
+          {Math.round(forecastDay.temperature.maximum)} °
         </strong>
-        <strong>°</strong>{" "}
         <span className="forecast-temp">
-          {Math.round(forecastDay.temperature.minimum)}
+          {Math.round(forecastDay.temperature.minimum)} °
         </span>
-        °
       </p>
     </div>
   );

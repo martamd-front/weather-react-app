@@ -1,4 +1,6 @@
 import React from "react";
+import { GoMarkGithub } from "react-icons/go";
+
 import "./Footer.scss";
 export default function Footer() {
   return (
@@ -9,7 +11,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Open-source code
+          <GoMarkGithub className="icon" /> Open-source code
         </a>
         by Marta Muñoz
       </p>

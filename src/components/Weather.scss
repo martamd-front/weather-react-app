@@ -1,36 +1,40 @@
-.Weather .search-box {
-  border-radius: 40px;
-  padding: 10px 12px 10px 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  input {
-    border: none;
-    width: 80%;
-    background: none;
-    color: #fff;
-  }
-  input:focus,
-  input:active {
-    border: none;
-    outline: none;
-  }
-  .btn-search {
-    border-radius: 50px;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    padding: 0;
-    text-align: center;
-    background: #d485ff;
-    border: none;
-    transition: all 200ms ease-in-out;
-    .icon {
-      position: relative;
-      right: 0;
-      top: 0;
-      width: 24px;
-      height: 24px;
+.Weather {
+  .search-box {
+    border-radius: 40px;
+    padding: 10px 12px 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    input {
+      border: none;
+      width: 80%;
+      background: none;
+      color: #fff;
+    }
+    input:focus,
+    input:active {
+      border: none;
+      outline: none;
+    }
+
+    .btn-search {
+      border-radius: 50px;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      padding: 0;
+      text-align: center;
+      background: #d485ff;
+      border: none;
+      transition: all 200ms ease-in-out;
+      .icon {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   .btn-search:hover,
@@ -38,6 +42,38 @@
   .btn-search:active {
     opacity: 0.8;
     background: #d485ff;
+  }
+  .btn-current-location {
+    border-radius: 50px;
+    display: inline-block;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    margin-left: 15px;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-in-out;
+    .icon {
+      position: relative;
+      right: 0;
+      top: -2px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .btn-current-location:hover,
+  .btn-current-location:focus,
+  .btn-current-location:active {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+@media (max-width: 650px) {
+  .Weather .btn-current-location {
+    width: 55px !important;
   }
 }
 

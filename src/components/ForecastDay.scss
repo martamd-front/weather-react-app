@@ -14,7 +14,13 @@
 }
 
 @media (max-width: 650px) {
-  .ForecastDay .weather-icon img {
-    width: 75%;
+  .ForecastDay {
+    .weather-icon img {
+      width: 75%;
+    }
+    .temperature strong,
+    .temperature span {
+      display: block;
+    }
   }
 }

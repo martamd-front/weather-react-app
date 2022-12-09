@@ -23,3 +23,13 @@
     }
   }
 }
+
+@media (max-width: 650px) {
+  .WeatherTemperarature {
+    font-size: 40px;
+    margin-bottom: 0;
+    .units {
+      top: -15px;
+    }
+  }
+}

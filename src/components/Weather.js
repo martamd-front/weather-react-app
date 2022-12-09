@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.scss";
-import SearchIcon from "../images/search.svg";
+import { GoSearch } from "react-icons/go";
+import { MdOutlineMyLocation } from "react-icons/md";
 import InfoWeather from "./InfoWeather";
 import FiveDays from "./FiveDays";
 import PropagateLoader from "react-spinners/PropagateLoader";
@@ -21,6 +22,7 @@ const Weather = ({ defaultCity }) => {
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
       city: response.data.city,
+      coordinates: response.data.coord,
     });
   };
 
@@ -30,6 +32,16 @@ const Weather = ({ defaultCity }) => {
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showWeather);
   };
+
+  function onClickCurrentLocButton(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function (position) {
+      let apiKey = "d0b6fd5o79fcec65aa41f33c5203dt9a";
+      let units = "metric";
+      let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=${units}`;
+      axios.get(apiUrl).then(showWeather);
+    });
+  }
 
   function getTimeCity(response) {
     setDate(formattedDate(response.data.datetime));
@@ -53,16 +65,25 @@ const Weather = ({ defaultCity }) => {
 
   const form = (
     <form className="Search" id="search-form" onSubmit={handleSubmit}>
-      <div className="d-flex justify-content-between search-box">
-        <input
-          type="text"
-          id="city-input"
-          placeholder="Enter a city..."
-          onChange={changeCity}
-          autoComplete="off"
-        />
-        <button type="submit" className="btn btn-primary btn-search">
-          <img src={SearchIcon} alt="Search icon" />
+      <div className="d-flex align-items-center">
+        <div className="d-flex justify-content-between search-box">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Enter a city..."
+            onChange={changeCity}
+            autoComplete="off"
+          />
+
+          <button type="submit" className="btn btn-primary btn-search">
+            <GoSearch className="icon" alt="Search icon" />
+          </button>
+        </div>
+        <button
+          className="btn btn-primary btn-current-location"
+          onClick={onClickCurrentLocButton}
+        >
+          <MdOutlineMyLocation className="icon" alt="Current location" />
         </button>
       </div>
     </form>

@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
-html {
+html,
+body {
   height: 100%;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
   background: linear-gradient(to bottom, #352b89, #342f6b, #35355c);
+  background-attachment: fixed;
 }
 
 /* BOX */
