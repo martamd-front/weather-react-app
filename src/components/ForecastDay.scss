@@ -1,0 +1,20 @@
+.ForecastDay {
+  h4,
+  p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .weather-icon img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 650px) {
+  .ForecastDay .weather-icon img {
+    width: 75%;
+  }
+}

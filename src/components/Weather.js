@@ -81,7 +81,7 @@ const Weather = ({ defaultCity }) => {
           wind={Math.round(weatherData.wind)}
           icon={weatherData.icon}
         />
-        <FiveDays />
+        <FiveDays city={weatherData.city} />
       </div>
     );
   } else {
