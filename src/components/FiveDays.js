@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./FiveDays.scss";
 import axios from "axios";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import ForecastDay from "./ForecastDay";
+import "./FiveDays.scss";
 
 export default function FiveDays({ city }) {
   const [loaded, setLoaded] = useState(false);
@@ -44,7 +45,10 @@ export default function FiveDays({ city }) {
     );
   } else {
     load();
-
-    return null;
+    return (
+      <div className="Loading">
+        <PropagateLoader color="#d485ff" />
+      </div>
+    );
   }
 }
