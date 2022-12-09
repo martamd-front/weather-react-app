@@ -22,7 +22,8 @@ body {
 @media (max-height: 650px) {
   .vertical-align-vh {
     height: auto;
-    margin: 25px 5px;
+    margin: 0;
+    padding: 25px;
   }
 }
 
