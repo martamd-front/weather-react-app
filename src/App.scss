@@ -17,6 +17,7 @@ body {
 /* BOX */
 .vertical-align-vh {
   height: 100vh;
+  flex-direction: column;
 }
 
 @media (max-height: 650px) {
