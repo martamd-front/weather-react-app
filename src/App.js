@@ -5,8 +5,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <div className="d-flex align-items-center justify-content-center vertical-align-vh">
+      <div className="vertical-align-vh">
+        <div className="container">
           <main className="box-app">
             <Weather defaultCity="Barcelona" />
             <Footer />

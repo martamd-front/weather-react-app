@@ -10,14 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
-  background: linear-gradient(to bottom, #352b89, #342f6b, #35355c);
-  background-attachment: fixed;
 }
 
 /* BOX */
 .vertical-align-vh {
-  height: 100vh;
+  background: linear-gradient(to bottom, #352b89, #342f6b, #35355c);
+  min-height: 100vh;
+  width: 100wh;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-height: 650px) {
