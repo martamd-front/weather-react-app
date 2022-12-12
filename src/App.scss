@@ -33,7 +33,7 @@ body {
 .box-app {
   border-radius: 10px;
   padding: 30px 30px 50px;
-  width: 600px;
+  max-width: 600px;
   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   border-radius: 30px;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
